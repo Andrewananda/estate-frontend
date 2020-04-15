@@ -1,100 +1,807 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout.app')
+@section('content')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+    <!-- Ads start -->
+    <div class="recently-properties content-area-12">
+        <div class="container">
+            <!-- Main title -->
+            <div class="main-title">
+                <h1>Ads</h1>
+            </div>
+            <div class="slick-slider-area">
+                <div class="row slick-carousel" data-slick='{"slidesToShow": 4, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+                    <div class="slick-slide-item">
+                        <div class="property-box-5">
+                            <div class="property-photo">
+                                <img class="img-fluid" src="{{ asset('assets/img/properties/properties-1.jpg')}}" alt="properties">
+                                <div class="date-box">For Sale</div>
+                            </div>
+                            <div class="detail">
+                                <div class="heading">
+                                    <h3>
+                                        <a href="properties-details.html">Masons Villas</a>
+                                    </h3>
+                                    <div class="location">
+                                        <a href="properties-details.html">
+                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="properties-listing">
+                                    <span>3 Beds</span>
+                                    <span>2 Baths</span>
+                                    <span>980 sqft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-slide-item">
+                        <div class="property-box-5">
+                            <div class="property-photo">
+                                <img class="img-fluid" src="{{ asset('assets/img/properties/properties-2.jpg')}}" alt="properties">
+                                <div class="date-box">For Sale</div>
+                            </div>
+                            <div class="detail">
+                                <div class="heading">
+                                    <h3>
+                                        <a href="properties-details.html">Luxury Villa</a>
+                                    </h3>
+                                    <div class="location">
+                                        <a href="properties-details.html">
+                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="properties-listing">
+                                    <span>3 Beds</span>
+                                    <span>2 Baths</span>
+                                    <span>980 sqft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-slide-item">
+                        <div class="property-box-5">
+                            <div class="property-photo">
+                                <img class="img-fluid" src="{{ asset('assets/img/properties/properties-3.jpg')}}" alt="properties">
+                                <div class="date-box">For Rent</div>
+                            </div>
+                            <div class="detail">
+                                <div class="heading">
+                                    <h3>
+                                        <a href="properties-details.html">Park avenue</a>
+                                    </h3>
+                                    <div class="location">
+                                        <a href="properties-details.html">
+                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="properties-listing">
+                                    <span>3 Beds</span>
+                                    <span>2 Baths</span>
+                                    <span>980 sqft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-slide-item">
+                        <div class="property-box-5">
+                            <div class="property-photo">
+                                <img class="img-fluid" src="{{ asset('assets/img/properties/properties-4.jpg')}}" alt="properties">
+                                <div class="date-box">For Sale</div>
+                            </div>
+                            <div class="detail">
+                                <div class="heading">
+                                    <h3>
+                                        <a href="properties-details.html">Real Luxury Villa</a>
+                                    </h3>
+                                    <div class="location">
+                                        <a href="properties-details.html">
+                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="properties-listing">
+                                    <span>3 Beds</span>
+                                    <span>2 Baths</span>
+                                    <span>980 sqft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-slide-item">
+                        <div class="property-box-5">
+                            <div class="property-photo">
+                                <img class="img-fluid" src="{{ asset('assets/img/properties/properties-5.jpg')}}" alt="properties">
+                                <div class="date-box">For Sale</div>
+                            </div>
+                            <div class="detail">
+                                <div class="heading">
+                                    <h3>
+                                        <a href="properties-details.html">Luxury Villa</a>
+                                    </h3>
+                                    <div class="location">
+                                        <a href="properties-details.html">
+                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="properties-listing">
+                                    <span>3 Beds</span>
+                                    <span>2 Baths</span>
+                                    <span>980 sqft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+    <!-- Featured properties start -->
+    <div class="featured-properties content-area">
+        <div class="container">
+            <!-- Main title -->
+            <div class="main-title mt2">
+                <h1>Featured Properties</h1>
+                <div class="list-inline-listing">
+                    <ul class="filters filteriz-navigation clearfix">
+                        <li class="active btn filtr-button filtr" data-filter="all">All</li>
+                        <li data-filter="1" class="btn btn-inline filtr-button filtr">Apartment</li>
+                        <li data-filter="2" class="btn btn-inline filtr-button filtr">House</li>
+                        <li data-filter="3" class="btn btn-inline filtr-button filtr">Office</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row filter-portfolio">
+                <div class="cars">
+                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="3">
+                        <div class="property-box">
+                            <div class="property-thumbnail">
+                                <a href="properties-details.html" class="property-img">
+                                    <div class="listing-badges">
+                                        <span class="featured">Featured</span>
+                                    </div>
+                                    <div class="price-ratings-box">
+                                        <p class="price">
+                                            $178,000
+                                        </p>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+                                    <div class="listing-time opening">For Sale</div>
+                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-1.jpg')}}" alt="properties">
+                                </a>
+                            </div>
+                            <div class="detail">
+                                <h1 class="title">
+                                    <a href="properties-details.html">Modern Family Home</a>
+                                </h1>
+                                <div class="location">
+                                    <a href="properties-details.html">
+                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                    </a>
+                                </div>
+                                <ul class="facilities-list clearfix">
+                                    <li>
+                                        <i class="flaticon-square"></i> 4800 sq ft
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-furniture"></i> 3 Beds
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-holidays"></i> 2 Baths
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-vehicle"></i> 1 Garage
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-window"></i> 3 Balcony
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-monitor"></i> TV
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="pull-left days">
+                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="3, 2, 1">
+                        <div class="property-box">
+                            <div class="property-thumbnail">
+                                <a href="properties-details.html" class="property-img">
+                                    <div class="listing-badges">
+                                        <span class="featured">Featured</span>
+                                    </div>
+                                    <div class="price-ratings-box">
+                                        <p class="price">
+                                            $178,000
+                                        </p>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+                                    <div class="listing-time opening">For Rent</div>
+                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-2.jpg')}}" alt="properties">
+                                </a>
+                            </div>
+                            <div class="detail">
+                                <h1 class="title">
+                                    <a href="properties-details.html">Relaxing Apartment</a>
+                                </h1>
+                                <div class="location">
+                                    <a href="properties-details.html">
+                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                    </a>
+                                </div>
+                                <ul class="facilities-list clearfix">
+                                    <li>
+                                        <i class="flaticon-square"></i> 4800 sq ft
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-furniture"></i> 3 Beds
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-holidays"></i> 2 Baths
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-vehicle"></i> 1 Garage
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-window"></i> 3 Balcony
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-monitor"></i> TV
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="pull-left days">
+                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="1, 2">
+                        <div class="property-box">
+                            <div class="property-thumbnail">
+                                <a href="properties-details.html" class="property-img">
+                                    <div class="listing-badges">
+                                        <span class="featured">Featured</span>
+                                    </div>
+                                    <div class="listing-time opening">For Sale</div>
+                                    <div class="price-ratings-box">
+                                        <p class="price">
+                                            $178,000
+                                        </p>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-3.jpg')}}" alt="properties">
+                                </a>
+                            </div>
+                            <div class="detail">
+                                <h1 class="title">
+                                    <a href="properties-details.html">Park Avenue</a>
+                                </h1>
+                                <div class="location">
+                                    <a href="properties-details.html">
+                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                    </a>
+                                </div>
+                                <ul class="facilities-list clearfix">
+                                    <li>
+                                        <i class="flaticon-square"></i> 4800 sq ft
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-furniture"></i> 3 Beds
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-holidays"></i> 2 Baths
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-vehicle"></i> 1 Garage
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-window"></i> 3 Balcony
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-monitor"></i> TV
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="pull-left days">
+                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="3, 2">
+                        <div class="property-box">
+                            <div class="property-thumbnail">
+                                <a href="properties-details.html" class="property-img">
+                                    <div class="listing-badges">
+                                        <span class="featured">Featured</span>
+                                    </div>
+                                    <div class="listing-time opening">For Rent</div>
+                                    <div class="price-ratings-box">
+                                        <p class="price">
+                                            $178,000
+                                        </p>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-4.jpg')}}" alt="properties">
+                                </a>
+                            </div>
+                            <div class="detail">
+                                <h1 class="title">
+                                    <a href="properties-details.html">Masons Villas</a>
+                                </h1>
+                                <div class="location">
+                                    <a href="properties-details.html">
+                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                    </a>
+                                </div>
+                                <ul class="facilities-list clearfix">
+                                    <li>
+                                        <i class="flaticon-square"></i> 4800 sq ft
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-furniture"></i> 3 Beds
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-holidays"></i> 2 Baths
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-vehicle"></i> 1 Garage
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-window"></i> 3 Balcony
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-monitor"></i> TV
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="pull-left days">
+                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="2, 1">
+                        <div class="property-box">
+                            <div class="property-thumbnail">
+                                <a href="properties-details.html" class="property-img">
+                                    <div class="listing-badges">
+                                        <span class="featured">Featured</span>
+                                    </div>
+                                    <div class="price-ratings-box">
+                                        <p class="price">
+                                            $178,000
+                                        </p>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-5.jpg')}}" alt="properties">
+                                </a>
+                            </div>
+                            <div class="detail">
+                                <h1 class="title">
+                                    <a href="properties-details.html">Big Head House</a>
+                                </h1>
+                                <div class="location">
+                                    <a href="properties-details.html">
+                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                    </a>
+                                </div>
+                                <ul class="facilities-list clearfix">
+                                    <li>
+                                        <i class="flaticon-square"></i> 4800 sq ft
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-furniture"></i> 3 Beds
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-holidays"></i> 2 Baths
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-vehicle"></i> 1 Garage
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-window"></i> 3 Balcony
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-monitor"></i> TV
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="pull-left days">
+                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="3, 1">
+                        <div class="property-box">
+                            <div class="property-thumbnail">
+                                <a href="properties-details.html" class="property-img">
+                                    <div class="listing-badges">
+                                        <span class="featured">Featured</span>
+                                    </div>
+                                    <div class="listing-time opening">For Rent</div>
+                                    <div class="price-ratings-box">
+                                        <p class="price">
+                                            $178,000
+                                        </p>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-6.jpg')}}" alt="properties">
+                                </a>
+                            </div>
+                            <div class="detail">
+                                <h1 class="title">
+                                    <a href="properties-details.html">Park Avenue</a>
+                                </h1>
+                                <div class="location">
+                                    <a href="properties-details.html">
+                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                    </a>
+                                </div>
+                                <ul class="facilities-list clearfix">
+                                    <li>
+                                        <i class="flaticon-square"></i> 4800 sq ft
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-furniture"></i> 3 Beds
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-holidays"></i> 2 Baths
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-vehicle"></i> 1 Garage
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-window"></i> 3 Balcony
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-monitor"></i> TV
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="pull-left days">
+                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services 2 start -->
+    <div class="services-2 content-area-5 bg-grea-3">
+        <div class="container">
+            <!-- Main title -->
+            <div class="main-title">
+                <h1>What are you looking for?</h1>
+            </div>
+            <div class="row wow">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="service-info-5">
+                        <i class="flaticon-apartment"></i>
+                        <h4>Apartments</h4>
+                        <p>Lorem ipsum dolor sit amet, consectur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="service-info-5">
+                        <i class="flaticon-internet"></i>
+                        <h4>Houses</h4>
+                        <p>Lorem ipsum dolor sit amet, consectur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="service-info-5">
+                        <i class="flaticon-vehicle"></i>
+                        <h4>Garages</h4>
+                        <p>Lorem ipsum dolor sit amet, consectur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="service-info-5">
+                        <i class="flaticon-coins"></i>
+                        <h4>Commercial</h4>
+                        <p>Lorem ipsum dolor sit amet, consectur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center read-more-2">
+                <a href="services-1.html" class="btn-white">Read More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial 3 start -->
+    <div class="testimonial-3">
+        <div class="container">
+            <header class="testimonia-header">
+                <h1>Our Testimonial</h1>
+            </header>
+            <div class="slick-slider-area">
+                <div class="row slick-carousel" data-slick='{"slidesToShow": 2, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+                    <div class="slick-slide-item">
+                        <div class="testimonial-inner">
+                            <div class="content-box">
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-full"></i>
+                                    <span>( 7 Reviews )</span>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been standard dummy text ever</p>
+                            </div>
+                            <div class="media">
+                                <a href="#">
+                                    <img src="{{ asset('assets/img/avatar/avatar-2.jpg')}}" alt="testimonial-avatar" class="img-fluid">
+                                </a>
+                                <div class="media-body align-self-center">
+                                    <h5>
+                                        Eliane Perei
+                                    </h5>
+                                    <h6>Web Developer</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-slide-item">
+                        <div class="testimonial-inner">
+                            <div class="content-box">
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-full"></i>
+                                    <span>( 7 Reviews )</span>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been standard dummy text ever</p>
+                            </div>
+                            <div class="media">
+                                <a href="#">
+                                    <img src="{{ asset('assets/img/avatar/avatar-3.jpg')}}" alt="testimonial-avatar" class="img-fluid">
+                                </a>
+                                <div class="media-body align-self-center">
+                                    <h5>
+                                        Maria Blank
+                                    </h5>
+                                    <h6>Office Manager</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-slide-item">
+                        <div class="testimonial-inner">
+                            <div class="content-box">
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-full"></i>
+                                    <span>( 7 Reviews )</span>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been standard dummy text ever</p>
+                            </div>
+                            <div class="media">
+                                <a href="#">
+                                    <img src="{{ asset('assets/img/avatar/avatar-4.jpg')}}" alt="testimonial-avatar" class="img-fluid">
+                                </a>
+                                <div class="media-body align-self-center">
+                                    <h5>
+                                        Karen Paran
+                                    </h5>
+                                    <h6>Support Manager</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-slide-item">
+                        <div class="testimonial-inner">
+                            <div class="content-box">
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-full"></i>
+                                    <span>( 7 Reviews )</span>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been standard dummy text ever</p>
+                            </div>
+                            <div class="media">
+                                <a href="#">
+                                    <img src="{{ asset('assets/img/avatar/avatar-1.jpg')}}" alt="testimonial-avatar" class="img-fluid">
+                                </a>
+                                <div class="media-body align-self-center">
+                                    <h5>
+                                        John Pitarshon
+                                    </h5>
+                                    <h6>Creative Director</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog start -->
+    <div class="blog content-area">
+        <div class="container">
+            <!-- Main title -->
+            <div class="main-title">
+                <h1>Our Blog</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-3">
+                        <div class="blog-photo">
+                            <img src="{{ asset('assets/img/blog/blog-1.jpg')}}" alt="blog-1" class="img-fluid">
+                            <div class="date-box">
+                                <span>17</span>Feb
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <ul>
+                                <li class="profile-user">
+                                    <img src="{{ asset('assets/img/avatar/avatar-1.jpg')}}" alt="user-blog">
+                                </li>
+                                <li><span>John Doe</span></li>
+                                <li><i class="fa fa-calendar"></i></li>
+                                <li><i class="fa fa-comments"></i></li>
+                            </ul>
+                        </div>
+                        <div class="caption detail">
+                            <h4><a href="blog-single-sidebar-right.html">Buying a Home</a></h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dummy text ever since the 1500s, when</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-3">
+                        <div class="blog-photo">
+                            <img src="{{ asset('assets/img/blog/blog-2.jpg')}}" alt="blog" class="img-fluid">
+                            <div class="date-box">
+                                <span>17</span>Jan
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <ul>
+                                <li class="profile-user">
+                                    <img src="{{ asset('assets/img/avatar/avatar-2.jpg')}}" alt="user-blog">
+                                </li>
+                                <li><span>Alex Teseira</span></li>
+                                <li><i class="fa fa-calendar"></i></li>
+                                <li><i class="fa fa-comments"></i></li>
+                            </ul>
+                        </div>
+                        <div class="caption detail">
+                            <h4><a href="blog-single-sidebar-right.html">Selling Your Real House</a></h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dummy text ever since the 1500s, when</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 none-992">
+                    <div class="blog-3">
+                        <div class="blog-photo">
+                            <img src="{{ asset('assets/img/blog/blog-3.jpg')}}" alt="blog" class="img-fluid">
+                            <div class="date-box">
+                                <span>23</span>May
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <ul>
+                                <li class="profile-user">
+                                    <img src="{{ asset('assets/img/avatar/avatar-3.jpg')}}" alt="user-blog">
+                                </li>
+                                <li><span>Karen Paran</span></li>
+                                <li><i class="fa fa-calendar"></i></li>
+                                <li><i class="fa fa-comments"></i></li>
+                            </ul>
+                        </div>
+                        <div class="caption detail">
+                            <h4><a href="blog-single-sidebar-right.html">Find Your Dream Real Estate</a></h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dummy text ever since the 1500s, when</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Partners strat -->
+{{--    <div class="partners">--}}
+{{--        <div class="container">--}}
+{{--            <h4>Brands and Partners</h4>--}}
+{{--            <div class="slick-slider-area">--}}
+{{--                <div class="row slick-carousel" data-slick='{"slidesToShow": 5, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 3}}, {"breakpoint": 768,"settings":{"slidesToShow": 2}}]}'>--}}
+{{--                    <div class="slick-slide-item"><img src="{{ asset('assets/img/brand/brand-1.png')}}')}}" alt="brand" class="img-fluid"></div>--}}
+{{--                    <div class="slick-slide-item"><img src="{{ asset('assets/img/brand/brand-2.png')}}" alt="brand" class="img-fluid"></div>--}}
+{{--                    <div class="slick-slide-item"><img src="{{ asset('assets/img/brand/brand-3.png')}}" alt="brand" class="img-fluid"></div>--}}
+{{--                    <div class="slick-slide-item"><img src="{{ asset('assets/img/brand/brand-4.png')}}" alt="brand" class="img-fluid"></div>--}}
+{{--                    <div class="slick-slide-item"><img src="{{ asset('assets/img/brand/brand-5.png')}}" alt="brand" class="img-fluid"></div>--}}
+{{--                    <div class="slick-slide-item"><img src="{{ asset('assets/img/brand/brand-6.png')}}" alt="brand" class="img-fluid"></div>--}}
+{{--                    <div class="slick-slide-item"><img src="{{ asset('assets/img/brand/brand-2.png')}}" alt="brand" class="img-fluid"></div>--}}
+{{--                    <div class="slick-slide-item"><img src="{{ asset('assets/img/brand/brand-4.png')}}" alt="brand" class="img-fluid"></div>--}}
+{{--                </div>--}}
+{{--                <div class="slick-prev slick-arrow-buton">--}}
+{{--                    <i class="fa fa-angle-left"></i>--}}
+{{--                </div>--}}
+{{--                <div class="slick-next slick-arrow-buton">--}}
+{{--                    <i class="fa fa-angle-right"></i>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+
+    @endsection
