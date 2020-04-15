@@ -63,10 +63,10 @@
                         <a class="nav-link" href="{{ route('home') }}" id="navbarDropdownMenuLink" aria-expanded="false">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdownMenuLink3" aria-expanded="false">Properties</a>
+                        <a class="nav-link" href="{{ route('properties') }}" id="navbarDropdownMenuLink3" aria-expanded="false">Properties</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdownMenuLink5" aria-expanded="false">Blog</a>
+                        <a class="nav-link" href="{{ route('blog') }}" id="navbarDropdownMenuLink5" aria-expanded="false">Blog</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" id="navbarDropdownMenuLink5" aria-expanded="false">Contact Us</a>
