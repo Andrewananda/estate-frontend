@@ -1,8 +1,196 @@
 @extends('layout.app')
 @section('content')
+    <!-- Banner start -->
+    <div class="banner" id="banner">
+        <div id="bannerCarousole" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item banner-max-height active">
+                    <img class="d-block w-100" src="{{ asset('assets/img/banner/banner-3.jpg')}}" alt="banner">
+                    <div class="carousel-caption banner-slider-inner d-flex h-100 text-center">
+                        <div class="carousel-content container">
+                            <div class="text-left tl">
+                                <h4>Find Your Dream House</h4>
+                                <p class="test">This is real estate website template based on Bootstrap 4 framework.</p>
+                                <a href="#" class="btn btn-white">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item banner-max-height">
+                    <img class="d-block w-100" src="{{ asset('assets/img/banner/banner-3.jpg')}}" alt="banner">
+                    <div class="carousel-caption banner-slider-inner d-flex h-100 text-center">
+                        <div class="carousel-content container">
+                            <div class="text-left tl">
+                                <h4>Find Your Dream House</h4>
+                                <p class="test">This is real estate website template based on Bootstrap 4 framework.</p>
+                                <a href="#" class="btn btn-white">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item banner-max-height">
+                    <img class="d-block w-100" src="{{ asset('assets/img/banner/banner-1.jpg')}}" alt="banner">
+                    <div class="carousel-caption banner-slider-inner d-flex h-100 text-center">
+                        <div class="carousel-content container">
+                            <div class="text-left tl">
+                                <h4>Find Your Dream House</h4>
+                                <p class="test">This is real estate website template based on Bootstrap 4 framework.</p>
+                                <a href="#" class="btn btn-white">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Search Section start -->
+            <div class="search-section search-area-2 search-area-4 none-992">
+                <div class="search-section-area">
+                    <div class="search-area-inner">
+                        <div class="search-contents">
+                            <form method="GET">
+                                <div class="form-group">
+                                    <select class="selectpicker search-fields" name="area">
+                                        <option>Area From</option>
+                                        <option>3000</option>
+                                        <option>2600</option>
+                                        <option>2200</option>
+                                        <option>1800</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="selectpicker search-fields" name="property-status">
+                                        <option>Property Status</option>
+                                        <option>For Sale</option>
+                                        <option>For Rent</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="selectpicker search-fields" name="property-types">
+                                        <option>Property Types</option>
+                                        <option>Apartments</option>
+                                        <option>Houses</option>
+                                        <option>Commercial</option>
+                                        <option>Garages</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-30">
+                                    <select class="selectpicker search-fields" name="location">
+                                        <option>Location</option>
+                                        <option>United States</option>
+                                        <option>United Kingdom</option>
+                                        <option>American Samoa</option>
+                                        <option>Belgium</option>
+                                    </select>
+                                </div>
+                                <div class="range-slider">
+                                    <div data-min="0" data-max="150000" data-unit="USD" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <button class="search-button">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Search Section end -->
+        </div>
+    </div>
+    <!-- Search Section start -->
+    <div class="search-section search-area-2 bg-grea sa2">
+        <div class="container">
+            <div class="search-section-area">
+                <div class="search-area-inner">
+                    <div class="search-contents">
+                        <form method="GET">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                    <div class="form-group">
+                                        <select class="selectpicker search-fields" name="area">
+                                            <option>Area From</option>
+                                            <option>3000</option>
+                                            <option>2600</option>
+                                            <option>2200</option>
+                                            <option>1800</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                    <div class="form-group">
+                                        <select class="selectpicker search-fields" name="property-status">
+                                            <option>Property Status</option>
+                                            <option>For Sale</option>
+                                            <option>For Rent</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                    <div class="form-group">
+                                        <select class="selectpicker search-fields" name="property-types">
+                                            <option>Property Types</option>
+                                            <option>Apartments</option>
+                                            <option>Houses</option>
+                                            <option>Commercial</option>
+                                            <option>Garages</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                    <div class="form-group">
+                                        <select class="selectpicker search-fields" name="location">
+                                            <option>Location</option>
+                                            <option>United States</option>
+                                            <option>United Kingdom</option>
+                                            <option>American Samoa</option>
+                                            <option>Belgium</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                    <div class="form-group">
+                                        <select class="selectpicker search-fields" name="max-area">
+                                            <option>Bedrooms</option>
+                                            <option>2400</option>
+                                            <option>2800</option>
+                                            <option>3200</option>
+                                            <option>3600</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                    <div class="form-group">
+                                        <select class="selectpicker search-fields" name="min-area">
+                                            <option>Bathrooms</option>
+                                            <option>2400</option>
+                                            <option>2800</option>
+                                            <option>3200</option>
+                                            <option>3600</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                    <div class="range-slider">
+                                        <div data-min="0" data-max="150000" data-unit="USD" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                    <div class="form-group">
+                                        <button class="search-button">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Ads start -->
-    <div class="recently-properties content-area-12">
+    <div class="recently-properties" style="padding-top:50px" >
         <div class="container">
             <!-- Main title -->
             <div class="main-title">
@@ -140,7 +328,7 @@
         </div>
     </div>
     <!-- Featured properties start -->
-    <div class="featured-properties content-area">
+    <div class="featured-properties" style="padding-top:50px">
         <div class="container">
             <!-- Main title -->
             <div class="main-title mt2">
