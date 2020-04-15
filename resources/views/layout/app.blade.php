@@ -46,7 +46,7 @@
 <div class="page_loader"></div>
 
 <!-- Main header start -->
-<header class="main-header mh-3 header-transparent main-header-2">
+<header @if(Request::segment(1) == '') class="main-header mh-3 header-transparent main-header-2" @else class="main-header" @endif >
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand logos" href="index.html">
@@ -59,7 +59,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav header-ml">
-                    <li class="nav-item dropdown active">
+                    <li class="nav-item dropdown">
                         <a class="nav-link" href="{{ route('home') }}" id="navbarDropdownMenuLink" aria-expanded="false">Home</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -69,7 +69,7 @@
                         <a class="nav-link" href="{{ route('blog') }}" id="navbarDropdownMenuLink5" aria-expanded="false">Blog</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdownMenuLink5" aria-expanded="false">Contact Us</a>
+                        <a class="nav-link" href="{{ route('contact') }}" id="navbarDropdownMenuLink5" aria-expanded="false">Contact Us</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">

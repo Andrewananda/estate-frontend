@@ -6,7 +6,7 @@
             <div class="page-name">
                 <h1>Properties List Fullwidth</h1>
                 <ul>
-                    <li><a href="{{ route('home') }}"></a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li><span>/</span><a href="{{ route('blog') }}">Blog</a></li>
                     <li><span>/</span><a href="#">Contact Us</a></li>
 

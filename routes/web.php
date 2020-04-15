@@ -20,3 +20,6 @@ Route::get('properties',function (){
 Route::get('/blog',function (){
     return view('blog');
 })->name('blog');
+Route::get('contact',function () {
+    return view('contact');
+})->name('contact');
