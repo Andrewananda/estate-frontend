@@ -198,131 +198,33 @@
             </div>
             <div class="slick-slider-area">
                 <div class="row slick-carousel" data-slick='{"slidesToShow": 4, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+                    @foreach($ads as $ad)
                     <div class="slick-slide-item">
                         <div class="property-box-5">
                             <div class="property-photo">
                                 <img class="img-fluid" src="{{ asset('assets/img/properties/properties-1.jpg')}}" alt="properties">
-                                <div class="date-box">For Sale</div>
+                                <div class="date-box">For {{ $ad->unit_group->property_type->title }}</div>
                             </div>
                             <div class="detail">
                                 <div class="heading">
                                     <h3>
-                                        <a href="properties-details.html">Masons Villas</a>
+                                        <a href="properties-details.html">{{ $ad->unit_group->title }}</a>
                                     </h3>
                                     <div class="location">
                                         <a href="properties-details.html">
-                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                            <i class="fa fa-map-marker"></i>{{ $ad->unit_group->location->title }}
                                         </a>
                                     </div>
                                 </div>
                                 <div class="properties-listing">
-                                    <span>3 Beds</span>
-                                    <span>2 Baths</span>
-                                    <span>980 sqft</span>
+                                    <span>{{ $ad->unit_group->bedroom }} beds</span>
+                                    <span>{{ $ad->unit_group->bathroom }} baths</span>
+                                    <span>{{ $ad->unit_group->balcony }} balcony</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide-item">
-                        <div class="property-box-5">
-                            <div class="property-photo">
-                                <img class="img-fluid" src="{{ asset('assets/img/properties/properties-2.jpg')}}" alt="properties">
-                                <div class="date-box">For Sale</div>
-                            </div>
-                            <div class="detail">
-                                <div class="heading">
-                                    <h3>
-                                        <a href="properties-details.html">Luxury Villa</a>
-                                    </h3>
-                                    <div class="location">
-                                        <a href="properties-details.html">
-                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="properties-listing">
-                                    <span>3 Beds</span>
-                                    <span>2 Baths</span>
-                                    <span>980 sqft</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slick-slide-item">
-                        <div class="property-box-5">
-                            <div class="property-photo">
-                                <img class="img-fluid" src="{{ asset('assets/img/properties/properties-3.jpg')}}" alt="properties">
-                                <div class="date-box">For Rent</div>
-                            </div>
-                            <div class="detail">
-                                <div class="heading">
-                                    <h3>
-                                        <a href="properties-details.html">Park avenue</a>
-                                    </h3>
-                                    <div class="location">
-                                        <a href="properties-details.html">
-                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="properties-listing">
-                                    <span>3 Beds</span>
-                                    <span>2 Baths</span>
-                                    <span>980 sqft</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slick-slide-item">
-                        <div class="property-box-5">
-                            <div class="property-photo">
-                                <img class="img-fluid" src="{{ asset('assets/img/properties/properties-4.jpg')}}" alt="properties">
-                                <div class="date-box">For Sale</div>
-                            </div>
-                            <div class="detail">
-                                <div class="heading">
-                                    <h3>
-                                        <a href="properties-details.html">Real Luxury Villa</a>
-                                    </h3>
-                                    <div class="location">
-                                        <a href="properties-details.html">
-                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="properties-listing">
-                                    <span>3 Beds</span>
-                                    <span>2 Baths</span>
-                                    <span>980 sqft</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slick-slide-item">
-                        <div class="property-box-5">
-                            <div class="property-photo">
-                                <img class="img-fluid" src="{{ asset('assets/img/properties/properties-5.jpg')}}" alt="properties">
-                                <div class="date-box">For Sale</div>
-                            </div>
-                            <div class="detail">
-                                <div class="heading">
-                                    <h3>
-                                        <a href="properties-details.html">Luxury Villa</a>
-                                    </h3>
-                                    <div class="location">
-                                        <a href="properties-details.html">
-                                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="properties-listing">
-                                    <span>3 Beds</span>
-                                    <span>2 Baths</span>
-                                    <span>980 sqft</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -344,6 +246,7 @@
             </div>
             <div class="row filter-portfolio">
                 <div class="cars">
+                    @foreach($properties as $property)
                     <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="3">
                         <div class="property-box">
                             <div class="property-thumbnail">
@@ -353,7 +256,7 @@
                                     </div>
                                     <div class="price-ratings-box">
                                         <p class="price">
-                                            $178,000
+                                            {{ number_format($property->rent,2) }}
                                         </p>
                                         <div class="ratings">
                                             <i class="fa fa-star"></i>
@@ -363,364 +266,40 @@
                                             <i class="fa fa-star-o"></i>
                                         </div>
                                     </div>
-                                    <div class="listing-time opening">For Sale</div>
+                                    <div class="listing-time opening">For {{ $property->property_type->title }}</div>
                                     <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-1.jpg')}}" alt="properties">
                                 </a>
                             </div>
                             <div class="detail">
                                 <h1 class="title">
-                                    <a href="properties-details.html">Modern Family Home</a>
+                                    <a href="properties-details.html">{{ $property->property->title }}</a>
                                 </h1>
                                 <div class="location">
                                     <a href="properties-details.html">
-                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
+                                        <i class="fa fa-map-marker"></i>{{ $property->location->title }}
                                     </a>
                                 </div>
                                 <ul class="facilities-list clearfix">
+{{--                                    <li>--}}
+{{--                                        <i class="flaticon-square"></i> 4800 sq ft--}}
+{{--                                    </li>--}}
                                     <li>
-                                        <i class="flaticon-square"></i> 4800 sq ft
+                                        <i class="flaticon-furniture"></i> {{ $property->bedroom }} bedroom
                                     </li>
                                     <li>
-                                        <i class="flaticon-furniture"></i> 3 Beds
+                                        <i class="flaticon-holidays"></i> {{ $property->bathroom }} Baths
                                     </li>
+{{--                                    <li>--}}
+{{--                                        <i class="flaticon-vehicle"></i> 1 Garage--}}
+{{--                                    </li>--}}
                                     <li>
-                                        <i class="flaticon-holidays"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i> 1 Garage
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-window"></i> 3 Balcony
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-monitor"></i> TV
+                                        <i class="flaticon-window"></i> {{ $property->balcony }} Balcony
                                     </li>
                                 </ul>
                             </div>
-                            <div class="footer clearfix">
-                                <div class="pull-left days">
-                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="3, 2, 1">
-                        <div class="property-box">
-                            <div class="property-thumbnail">
-                                <a href="properties-details.html" class="property-img">
-                                    <div class="listing-badges">
-                                        <span class="featured">Featured</span>
-                                    </div>
-                                    <div class="price-ratings-box">
-                                        <p class="price">
-                                            $178,000
-                                        </p>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <div class="listing-time opening">For Rent</div>
-                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-2.jpg')}}" alt="properties">
-                                </a>
-                            </div>
-                            <div class="detail">
-                                <h1 class="title">
-                                    <a href="properties-details.html">Relaxing Apartment</a>
-                                </h1>
-                                <div class="location">
-                                    <a href="properties-details.html">
-                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
-                                    </a>
-                                </div>
-                                <ul class="facilities-list clearfix">
-                                    <li>
-                                        <i class="flaticon-square"></i> 4800 sq ft
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-furniture"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-holidays"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i> 1 Garage
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-window"></i> 3 Balcony
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-monitor"></i> TV
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="footer clearfix">
-                                <div class="pull-left days">
-                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="1, 2">
-                        <div class="property-box">
-                            <div class="property-thumbnail">
-                                <a href="properties-details.html" class="property-img">
-                                    <div class="listing-badges">
-                                        <span class="featured">Featured</span>
-                                    </div>
-                                    <div class="listing-time opening">For Sale</div>
-                                    <div class="price-ratings-box">
-                                        <p class="price">
-                                            $178,000
-                                        </p>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-3.jpg')}}" alt="properties">
-                                </a>
-                            </div>
-                            <div class="detail">
-                                <h1 class="title">
-                                    <a href="properties-details.html">Park Avenue</a>
-                                </h1>
-                                <div class="location">
-                                    <a href="properties-details.html">
-                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
-                                    </a>
-                                </div>
-                                <ul class="facilities-list clearfix">
-                                    <li>
-                                        <i class="flaticon-square"></i> 4800 sq ft
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-furniture"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-holidays"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i> 1 Garage
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-window"></i> 3 Balcony
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-monitor"></i> TV
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="footer clearfix">
-                                <div class="pull-left days">
-                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="3, 2">
-                        <div class="property-box">
-                            <div class="property-thumbnail">
-                                <a href="properties-details.html" class="property-img">
-                                    <div class="listing-badges">
-                                        <span class="featured">Featured</span>
-                                    </div>
-                                    <div class="listing-time opening">For Rent</div>
-                                    <div class="price-ratings-box">
-                                        <p class="price">
-                                            $178,000
-                                        </p>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-4.jpg')}}" alt="properties">
-                                </a>
-                            </div>
-                            <div class="detail">
-                                <h1 class="title">
-                                    <a href="properties-details.html">Masons Villas</a>
-                                </h1>
-                                <div class="location">
-                                    <a href="properties-details.html">
-                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
-                                    </a>
-                                </div>
-                                <ul class="facilities-list clearfix">
-                                    <li>
-                                        <i class="flaticon-square"></i> 4800 sq ft
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-furniture"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-holidays"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i> 1 Garage
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-window"></i> 3 Balcony
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-monitor"></i> TV
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="footer clearfix">
-                                <div class="pull-left days">
-                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="2, 1">
-                        <div class="property-box">
-                            <div class="property-thumbnail">
-                                <a href="properties-details.html" class="property-img">
-                                    <div class="listing-badges">
-                                        <span class="featured">Featured</span>
-                                    </div>
-                                    <div class="price-ratings-box">
-                                        <p class="price">
-                                            $178,000
-                                        </p>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-5.jpg')}}" alt="properties">
-                                </a>
-                            </div>
-                            <div class="detail">
-                                <h1 class="title">
-                                    <a href="properties-details.html">Big Head House</a>
-                                </h1>
-                                <div class="location">
-                                    <a href="properties-details.html">
-                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
-                                    </a>
-                                </div>
-                                <ul class="facilities-list clearfix">
-                                    <li>
-                                        <i class="flaticon-square"></i> 4800 sq ft
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-furniture"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-holidays"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i> 1 Garage
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-window"></i> 3 Balcony
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-monitor"></i> TV
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="footer clearfix">
-                                <div class="pull-left days">
-                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="3, 1">
-                        <div class="property-box">
-                            <div class="property-thumbnail">
-                                <a href="properties-details.html" class="property-img">
-                                    <div class="listing-badges">
-                                        <span class="featured">Featured</span>
-                                    </div>
-                                    <div class="listing-time opening">For Rent</div>
-                                    <div class="price-ratings-box">
-                                        <p class="price">
-                                            $178,000
-                                        </p>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-6.jpg')}}" alt="properties">
-                                </a>
-                            </div>
-                            <div class="detail">
-                                <h1 class="title">
-                                    <a href="properties-details.html">Park Avenue</a>
-                                </h1>
-                                <div class="location">
-                                    <a href="properties-details.html">
-                                        <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City
-                                    </a>
-                                </div>
-                                <ul class="facilities-list clearfix">
-                                    <li>
-                                        <i class="flaticon-square"></i> 4800 sq ft
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-furniture"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-holidays"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i> 1 Garage
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-window"></i> 3 Balcony
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-monitor"></i> TV
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="footer clearfix">
-                                <div class="pull-left days">
-                                    <a><i class="fa fa-user"></i> Jhon Doe</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a><i class="flaticon-time"></i> 5 Days ago</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

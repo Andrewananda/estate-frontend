@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+//home page route
+Route::get('/',['uses'=>'HomeController@load_home_page'])->name('home');
+
+
 Route::get('properties',function (){
     return view('properties');
 })->name('properties');
