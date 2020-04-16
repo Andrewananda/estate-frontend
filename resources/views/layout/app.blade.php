@@ -62,8 +62,15 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="{{ route('home') }}" id="navbarDropdownMenuLink" aria-expanded="false">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ route('properties') }}" id="navbarDropdownMenuLink3" aria-expanded="false">Properties</a>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="{{ route('properties') }}" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Properties
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach($propertie as $property)
+                            <li><a class="dropdown-item" href="{{ $property->id }}">{{ $property->title }}</a></li>
+                            @endforeach
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="{{ route('blog') }}" id="navbarDropdownMenuLink5" aria-expanded="false">Blog</a>

@@ -23,6 +23,9 @@ class HomeController extends Controller
             ->where(['deleted'=>0])
             ->orderBy('id','DESC')
             ->get();
-        return view('welcome',['ads'=>$ads, 'properties'=>$properties]);
+
+        //get property
+        $property = Property::all();
+        return view('welcome',['ads'=>$ads, 'properties'=>$properties,'propertie'=>$property]);
     }
 }
