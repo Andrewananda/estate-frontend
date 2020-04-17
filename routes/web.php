@@ -24,3 +24,5 @@ Route::get('contact',function () {
 })->name('contact');
 
 Route::get('/property/{id}',['as'=>'property','uses'=>'HomeController@property']);
+Route::get('/order/{id}',['as'=>'order','uses'=>'HomeController@order']);
+Route::post('/complete',['as'=>'order.complete','uses'=>'HomeController@orderComplete']);

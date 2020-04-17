@@ -321,6 +321,11 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <a href="{{ route('order',['id'=>$property->id]) }}">
+                    <button style="margin-bottom: 100px"  class="btn btn-primary" type="submit"> Make Enquiry</button>
+                </a>
+            </div>
             <h3 class="heading-2">Similar Properties</h3>
             <!-- Similar Properties start -->
             <div class="row similar-properties">

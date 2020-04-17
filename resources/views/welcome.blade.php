@@ -202,16 +202,18 @@
                     <div class="slick-slide-item">
                         <div class="property-box-5">
                             <div class="property-photo">
+                                <a href="{{ route('property',['id'=>$ad->unit_group_id]) }}">
                                 <img class="img-fluid" src="{{ asset('assets/img/properties/properties-1.jpg')}}" alt="properties">
-                                <div class="date-box">For {{ $ad->unit_group->property_type->title }}</div>
+                                <div class="date-box" href="{{ route('property',['id'=>$ad->unit_group_id]) }}">For {{ $ad->unit_group->property_type->title }}</div>
+                                </a>
                             </div>
                             <div class="detail">
                                 <div class="heading">
                                     <h3>
-                                        <a href="properties-details.html">{{ $ad->unit_group->title }}</a>
+                                        <a href="{{ route('property',['id'=>$ad->unit_group_id]) }}">{{ $ad->unit_group->property->title }}</a>
                                     </h3>
                                     <div class="location">
-                                        <a href="properties-details.html">
+                                        <a href="{{ route('property',['id'=>$ad->unit_group_id]) }}">
                                             <i class="fa fa-map-marker"></i>{{ $ad->unit_group->location->title }}
                                         </a>
                                     </div>
@@ -267,7 +269,9 @@
                                         </div>
                                     </div>
                                     <div class="listing-time opening">For {{ $property->property_type->title }}</div>
-                                    <img class="d-block w-100" href="{{ route('property',['id'=>$property->id]) }}" src="{{ asset('assets/img/properties/properties-1.jpg')}}" alt="properties">
+                                    <a href="{{ route('property',['id'=>$ad->unit_group_id]) }}">
+                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-1.jpg')}}" alt="properties">
+                                    </a>
                                 </a>
                             </div>
                             <div class="detail">
