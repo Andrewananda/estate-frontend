@@ -4,7 +4,10 @@
     <list default="true" id="5b0244a2-9aff-4197-b466-e8dec4d08ccc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Unit_group.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Unit_group.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/property.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/property.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +145,7 @@
       <updated>1586902909801</updated>
       <workItem from="1586902911430" duration="11960000" />
       <workItem from="1586943872250" duration="194000" />
-      <workItem from="1587053557217" duration="14190000" />
+      <workItem from="1587053557217" duration="21355000" />
     </task>
     <servers />
   </component>
@@ -162,5 +165,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="339" y="210" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1586944048167" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1587134974192">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1587134974192" />
   </component>
 </project>

@@ -12,8 +12,8 @@ class Unit_group extends Model
     public function ad() {
         return $this->hasMany(Ad::class);
     }
-    public function unit_category() {
-        return $this->belongsTo(Unit_category::class);
+    public function property_category() {
+        return $this->belongsTo(Property_category::class);
     }
     public function unit_type() {
         return $this->belongsTo(Unit_type::class);

@@ -17,9 +17,10 @@ Route::get('/',['uses'=>'HomeController@load_home_page','as'=>'home']);
 Route::get('properties',function (){
     return view('properties');
 })->name('properties');
-Route::get('/blog',function (){
-    return view('blog');
-})->name('blog');
+Route::get('/blog',['as'=>'blog','uses'=>'HomeController@blog']);
+
 Route::get('contact',function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/property/{id}',['as'=>'property','uses'=>'HomeController@property']);

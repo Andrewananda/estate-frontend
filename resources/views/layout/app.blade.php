@@ -67,9 +67,9 @@
                             Properties
                         </a>
                         <ul class="dropdown-menu">
-                            @foreach($propertie as $property)
-                            <li><a class="dropdown-item" href="{{ $property->id }}">{{ $property->title }}</a></li>
-                            @endforeach
+{{--                            @foreach($property_search as $property)--}}
+{{--                            <li><a class="dropdown-item" href="{{ $property->id }}">{{ $property->title }}</a></li>--}}
+{{--                            @endforeach--}}
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

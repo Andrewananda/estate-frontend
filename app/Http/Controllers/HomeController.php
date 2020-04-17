@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Ad;
 use App\Property;
+use App\Property_category;
 use App\Unit_group;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,20 @@ class HomeController extends Controller
             ->get();
 
         //get property
-        $property = Property::all();
-        return view('welcome',['ads'=>$ads, 'properties'=>$properties,'propertie'=>$property]);
+        $property_search = Property::all();
+        return view('welcome',['ads'=>$ads, 'properties'=>$properties,'property_search'=>$property_search]);
+    }
+
+    public function blog() {
+        $property_search = Property::all();
+        return view('blog',['property_search'=>$property_search]);
+    }
+
+    public function property($id) {
+        $property = Unit_group::where(['id'=>$id])->first();
+        //get similar units
+        $similar_properties = Unit_group::where(['property_category_id'=>$property->property_category_id])->get();
+
+        return view('property',['property'=>$property,'similar_properties'=>$similar_properties]);
     }
 }

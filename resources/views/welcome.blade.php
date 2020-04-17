@@ -250,7 +250,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="3">
                         <div class="property-box">
                             <div class="property-thumbnail">
-                                <a href="properties-details.html" class="property-img">
+                                <a href="{{ route('property',['id'=>$property->id]) }}" class="property-img">
                                     <div class="listing-badges">
                                         <span class="featured">Featured</span>
                                     </div>
@@ -267,15 +267,15 @@
                                         </div>
                                     </div>
                                     <div class="listing-time opening">For {{ $property->property_type->title }}</div>
-                                    <img class="d-block w-100" src="{{ asset('assets/img/properties/properties-1.jpg')}}" alt="properties">
+                                    <img class="d-block w-100" href="{{ route('property',['id'=>$property->id]) }}" src="{{ asset('assets/img/properties/properties-1.jpg')}}" alt="properties">
                                 </a>
                             </div>
                             <div class="detail">
                                 <h1 class="title">
-                                    <a href="properties-details.html">{{ $property->property->title }}</a>
+                                    <a href="{{ route('property',['id'=>$property->id]) }}">{{ $property->property->title }}</a>
                                 </h1>
                                 <div class="location">
-                                    <a href="properties-details.html">
+                                    <a href="{{ route('property',['id'=>$property->id]) }}">
                                         <i class="fa fa-map-marker"></i>{{ $property->location->title }}
                                     </a>
                                 </div>
