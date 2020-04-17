@@ -4,10 +4,7 @@
     <list default="true" id="5b0244a2-9aff-4197-b466-e8dec4d08ccc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Unit_group.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Unit_group.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/properties.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/properties.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/property.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/property.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +141,7 @@
       <updated>1586902909801</updated>
       <workItem from="1586902911430" duration="11960000" />
       <workItem from="1586943872250" duration="194000" />
-      <workItem from="1587053557217" duration="36462000" />
+      <workItem from="1587053557217" duration="37445000" />
     </task>
     <servers />
   </component>

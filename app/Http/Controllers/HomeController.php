@@ -58,8 +58,18 @@ class HomeController extends Controller
         $property = Unit_group::where(['id'=>$id])->first();
         //get similar units
         $similar_properties = Unit_group::where(['property_category_id'=>$property->property_category_id])->get();
+        //queries for search
+        $property_types = Property_type::all();
+        $property_categories = Property_category::all();
+        $locations = Location::all();
 
-        return view('property',['property'=>$property,'similar_properties'=>$similar_properties]);
+        return view('property',[
+            'property'=>$property,
+            'similar_properties'=>$similar_properties,
+            'property_types'=>$property_types,
+            'property_categories'=>$property_categories,
+            'locations'=>$locations
+        ]);
     }
 
     //Order
@@ -96,6 +106,8 @@ class HomeController extends Controller
     public function propertiesSearch(Request $request) {
         $properties = Unit_group::query()
             ->where('bedroom',$request['bedroom'])
+            ->orWhere('bathroom',$request['bathroom'])
+            ->orWhere('balcony',$request['balcony'])
             ->orWhere('property_category_id',$request['property-category'])
             ->orWhere('property_type_id',$request['property-type'])
             ->orWhere('location_id',$request['location'])

@@ -83,107 +83,6 @@
                         </div>
                     </div>
                     <!-- Advanced search start -->
-                    <div class="widget-2 sidebar advanced-search-2">
-                        <h3 class="sidebar-title">Advanced Search</h3>
-                        <div class="s-border"></div>
-                        <div class="m-border"></div>
-                        <form method="GET">
-                            <div class="form-group">
-                                <select class="selectpicker search-fields" name="property-sdtatus">
-                                    <option>Property Status</option>
-                                    <option>For Sale</option>
-                                    <option>For Rent</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="selectpicker search-fields" name="property-type">
-                                    <option>Property Type</option>
-                                    <option>Apartments</option>
-                                    <option>Houses</option>
-                                    <option>Commercial</option>
-                                    <option>Garages</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="selectpicker search-fields" name="commercial">
-                                    <option>Commercial</option>
-                                    <option>Residential</option>
-                                    <option>Land</option>
-                                    <option>Hotels</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="selectpicker search-fields" name="location">
-                                    <option>location</option>
-                                    <option>New York</option>
-                                    <option>Bangladesh</option>
-                                    <option>India</option>
-                                    <option>Canada</option>
-                                </select>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <select class="selectpicker search-fields" name="bedrooms">
-                                            <option>Bedrooms</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <select class="selectpicker search-fields" name="bathroom">
-                                            <option>Bathroom</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <select class="selectpicker search-fields" name="balcony">
-                                            <option>Balcony</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <select class="selectpicker search-fields" name="garage">
-                                            <option>Garage</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="range-slider">
-                                <label>Area</label>
-                                <div data-min="0" data-max="10000" data-min-name="min_area" data-max-name="max_area" data-unit="Sq ft" class="range-slider-ui ui-slider" aria-disabled="false"></div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="range-slider">
-                                <label>Price</label>
-                                <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="form-group mb-0">
-                                <button class="search-button">Search</button>
-                            </div>
-                        </form>
-                    </div>
                     <!-- Properties description start -->
                     <div class="properties-description mb-40">
                         <h3 class="heading-2">
@@ -230,44 +129,28 @@
                             <h3 class="sidebar-title">Advanced Search</h3>
                             <div class="s-border"></div>
                             <div class="m-border"></div>
-                            <form method="GET">
-                                <div class="form-group">
-                                    <select class="selectpicker search-fields" name="property-sdtatus">
-                                        <option>Property Status</option>
-                                        <option>For Sale</option>
-                                        <option>For Rent</option>
-                                    </select>
-                                </div>
+                            <form action="{{ route('properties') }}" method="GET">
+                                @csrf
                                 <div class="form-group">
                                     <select class="selectpicker search-fields" name="property-type">
                                         <option>Property Type</option>
-                                        <option>Apartments</option>
-                                        <option>Houses</option>
-                                        <option>Commercial</option>
-                                        <option>Garages</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <select class="selectpicker search-fields" name="commercial">
-                                        <option>Commercial</option>
-                                        <option>Residential</option>
-                                        <option>Land</option>
-                                        <option>Hotels</option>
+                                        @foreach($property_types as $property_type)
+                                        <option>{{ $property_type->title }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <select class="selectpicker search-fields" name="location">
                                         <option>location</option>
-                                        <option>New York</option>
-                                        <option>Bangladesh</option>
-                                        <option>India</option>
-                                        <option>Canada</option>
+                                        @foreach($locations as $location)
+                                        <option>{{ $location->title }}</option>
+                                            @endforeach
                                     </select>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <select class="selectpicker search-fields" name="bedrooms">
+                                            <select class="selectpicker search-fields" name="bedroom">
                                                 <option>Bedrooms</option>
                                                 <option>1</option>
                                                 <option>2</option>
