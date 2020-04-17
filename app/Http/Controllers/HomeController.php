@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Ad;
+use App\Bedroom;
 use App\Contact;
 use App\Enquiry;
+use App\Location;
 use App\Property;
 use App\Property_category;
+use App\Property_type;
 use App\Unit_group;
 use Illuminate\Http\Request;
 
@@ -29,14 +32,28 @@ class HomeController extends Controller
 
         //get property
         $property_search = Property::all();
-        return view('welcome',['ads'=>$ads, 'properties'=>$properties,'property_search'=>$property_search]);
+        //Search Models
+        $property_categories = Property_category::all();
+        $property_types = Property_type::all();
+        $locations = Location::all();
+
+        return view('welcome',[
+            'ads'=>$ads,
+            'properties'=>$properties,
+            'property_search'=>$property_search,
+            'property_categories'=>$property_categories,
+            'property_types'=>$property_types,
+            'locations'=>$locations
+        ]);
     }
 
+    //Blog
     public function blog() {
         $property_search = Property::all();
         return view('blog',['property_search'=>$property_search]);
     }
 
+    //Property
     public function property($id) {
         $property = Unit_group::where(['id'=>$id])->first();
         //get similar units
@@ -45,6 +62,7 @@ class HomeController extends Controller
         return view('property',['property'=>$property,'similar_properties'=>$similar_properties]);
     }
 
+    //Order
     public function order($id) {
         $order = Unit_group::where(['id'=>$id])->first();
         return view('order',['order'=>$order]);
@@ -73,5 +91,17 @@ class HomeController extends Controller
         $contact->message = $request['message'];
         $contact->save();
         return redirect()->back()->with(['message'=>'Successfully sent, we will get back to you!']);
+    }
+
+    public function propertiesSearch(Request $request) {
+        $properties = Unit_group::query()
+            ->where('bedroom',$request['bedroom'])
+            ->orWhere('property_category_id',$request['property-category'])
+            ->orWhere('property_type_id',$request['property-type'])
+            ->orWhere('location_id',$request['location'])
+            ->orWhere('rent',$request['max_price'])
+            ->get();
+
+        return view('properties',['properties'=>$properties]);
     }
 }

@@ -46,43 +46,44 @@
                 <div class="search-section-area">
                     <div class="search-area-inner">
                         <div class="search-contents">
-                            <form method="GET">
+                            <form action="{{ route('properties') }}" method="GET">
+                                @csrf
                                 <div class="form-group">
-                                    <select class="selectpicker search-fields" name="area">
-                                        <option>Area From</option>
-                                        <option>3000</option>
-                                        <option>2600</option>
-                                        <option>2200</option>
-                                        <option>1800</option>
+                                    <select class="selectpicker search-fields" name="bedroom">
+                                        <option value="1">Bedroom</option>
+                                        <option value="1">One bedroom</option>
+                                        <option value="2">Two bedroom</option>
+                                        <option value="3">Three bedroom</option>
+                                        <option value="4">Four bedroom</option>
+                                        <option value="5">Five bedroom</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="selectpicker search-fields" name="property-status">
-                                        <option>Property Status</option>
-                                        <option>For Sale</option>
-                                        <option>For Rent</option>
+                                    <select class="selectpicker search-fields" name="property-type">
+                                        <option value="1">Property Status</option>
+                                        @foreach($property_types as $property_type)
+                                        <option value="{{ $property_type->id }}">{{ $property_type->title }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <select class="selectpicker search-fields" name="property-types">
-                                        <option>Property Types</option>
-                                        <option>Apartments</option>
-                                        <option>Houses</option>
-                                        <option>Commercial</option>
-                                        <option>Garages</option>
-                                    </select>
-                                </div>
+{{--                                <div class="form-group">--}}
+{{--                                    <select class="selectpicker search-fields" name="property-category">--}}
+{{--                                        <option value="1">Property Types</option>--}}
+{{--                                        @foreach($property_categories as $property_category)--}}
+{{--                                        <option value="{{ $property_category->id }}">{{ $property_category->title }}</option>--}}
+{{--                                            @endforeach--}}
+{{--                                    </select>--}}
+{{--                                </div>--}}
                                 <div class="form-group mb-30">
                                     <select class="selectpicker search-fields" name="location">
-                                        <option>Location</option>
-                                        <option>United States</option>
-                                        <option>United Kingdom</option>
-                                        <option>American Samoa</option>
-                                        <option>Belgium</option>
+                                        <option value="1">Location</option>
+                                        @foreach($locations as $location)
+                                        <option value="{{ $location->id }}">{{ $location->title }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="range-slider">
-                                    <div data-min="0" data-max="150000" data-unit="USD" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                    <div data-min="0" data-max="150000" data-unit="KSH" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="form-group">

@@ -26,4 +26,11 @@ class Unit_group extends Model
     public function location() {
         return $this->belongsTo(Location::class);
     }
+
+    public function bedroom() {
+        return $this->belongsTo(Bedroom::class);
+    }
+    public function bathroom() {
+        return $this->belongsTo(Bathroom::class);
+    }
 }
