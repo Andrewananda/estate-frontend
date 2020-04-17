@@ -21,7 +21,10 @@
             <!-- Main title -->
             <div class="main-title">
                 <h1 class="mb-10">Contact us</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Talk to us</p>
+                @if(Session::has('message'))
+                    <div class="alert alert-success" data-dismiss="alert" aria-label="Close">{{ Session::get('message') }}</div>
+                @endif
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-5">
@@ -43,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-7">
-                    <form action="#" method="GET" enctype="multipart/form-data">
+                    <form action="{{ route('contact.create') }}" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group name">
@@ -62,7 +65,7 @@
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group number">
-                                    <input type="text" name="phone" class="form-control" placeholder="Number">
+                                    <input type="text" name="phone" class="form-control" placeholder="phone">
                                 </div>
                             </div>
                             <div class="col-lg-12">

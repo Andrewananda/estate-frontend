@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ad;
+use App\Contact;
 use App\Enquiry;
 use App\Property;
 use App\Property_category;
@@ -61,5 +62,16 @@ class HomeController extends Controller
 
         $order->save();
         return redirect()->back()->with(['message'=>'Submitted Successfully']);
+    }
+
+    public function contactCreate(Request $request) {
+        $contact = new Contact();
+        $contact->name = $request['name'];
+        $contact->subject = $request['subject'];
+        $contact->email = $request['email'];
+        $contact->phone = $request['phone'];
+        $contact->message = $request['message'];
+        $contact->save();
+        return redirect()->back()->with(['message'=>'Successfully sent, we will get back to you!']);
     }
 }
