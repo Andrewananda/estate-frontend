@@ -277,6 +277,7 @@
                                 <div class="location">
                                     <a href="{{ route('property',['id'=>$property->id]) }}">
                                         <i class="fa fa-map-marker"></i>{{ $property->location->title }}
+                                        
                                     </a>
                                 </div>
                                 <ul class="facilities-list clearfix">
